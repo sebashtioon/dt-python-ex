@@ -6,7 +6,8 @@ tax_rate = 0.30 # tax rate of 30%
 print("your hourly rate is $18/hr.\nenter your hours worked to calculate pay")
 print("------------")
 hours_worked = float(input("hours worked: "))
-
+print("wow! you worked for:")
+print(str(hours_worked/168) + " weeks")
 print("------------")
 print("based off the amount of hours you worked (" + str(hours_worked) + "), your pay is $" + str(18*hours_worked))
 print("------------")
