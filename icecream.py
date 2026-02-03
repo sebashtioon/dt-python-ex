@@ -1,0 +1,1 @@
+iceCreams = ["vanilla", "chocolate", "strawberry"]
