@@ -10,6 +10,12 @@ difficulties : list = ["ez", "mid", "expert+"]
 def _cls():
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def gameQuit():
+    _cls()
+
+def gameStart():
+    pass
+
 
 def mainMenu():
     _in_main_menu = True
@@ -21,19 +27,26 @@ def mainMenu():
 
     print("\n1. play")
     print("2. settings")
-    print("3. quit")
+    print("3. how to play")
+    print("4. quit")
+
 
     option = input("")
 
     _cls()
+    if option == 1:
+        pass
+    elif option == 2:
+        pass
+    elif option == 3:
+        pass
+    elif option == 4:
+        gameQuit()
 
 
 def main():
     mainMenu()
 
-
-def gameStart():
-    pass
 
 
 main()
