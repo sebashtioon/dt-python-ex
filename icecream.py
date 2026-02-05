@@ -54,14 +54,14 @@ def main():
     
     print(f"you picked... {str(number_picked)}")
     time.sleep(1.5)
-    print(f"that was {iceCreams[number_picked + 1]}")
+    print(f"that was {iceCreams[number_picked - 1]}")
     time.sleep(0.8)
     print("but")
     time.sleep(1.5)
-    print(f"it is no longer {iceCreams[number_picked + 1]} !!!")
+    print(f"it is no longer {iceCreams[number_picked - 1]} !!!")
     time.sleep(2.5)
 
-    iceCreams[number_picked + 1] = "FERRARI !!!"
+    iceCreams[number_picked - 1] = "FERRARI !!!"
     print("FERRARI !!!!!!!!!!!!!")
 
     time.sleep(1.5)
