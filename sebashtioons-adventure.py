@@ -1,6 +1,14 @@
 import time
+import os
 
 _in_main_menu : bool = False
+
+difficulties : list = ["ez", "mid", "expert+"]
+
+
+# utility
+
+
 
 
 def mainMenu():
@@ -16,9 +24,18 @@ def mainMenu():
     print("3. quit")
 
     option = input("")
+ 
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 
 def main():
     mainMenu()
+
+
+def gameStart():
+    pass
+
+
 
 
 main()
