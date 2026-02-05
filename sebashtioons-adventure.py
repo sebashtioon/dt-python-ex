@@ -7,8 +7,8 @@ difficulties : list = ["ez", "mid", "expert+"]
 
 
 # utility
-
-
+def _cls():
+    os.system('cls' if os.name == 'nt' else 'clear')
 
 
 def mainMenu():
@@ -24,8 +24,8 @@ def mainMenu():
     print("3. quit")
 
     option = input("")
- 
-    os.system('cls' if os.name == 'nt' else 'clear')
+
+    _cls()
 
 
 def main():
@@ -34,8 +34,6 @@ def main():
 
 def gameStart():
     pass
-
-
 
 
 main()
