@@ -1,3 +1,4 @@
+import time
 iceCreams = []
 
 def addIceCream(icecream):
@@ -32,5 +33,51 @@ def main():
         print(ic)
 
     print("------------------")
+
+    times_tried : int = 0
+    number_picked : int = 0
+    
+    # keep asking until the input is between 1 and 6
+    while number_picked < 1 or number_picked > 6:
+        if times_tried > 0:
+            number_picked = int(input("bro its not hard... enter a number between 1 and 6: "))
+        else:
+           number_picked = int(input("go ahead, enter a number between 1 and 6: "))
+        
+        times_tried += 1
+
+    print("------------------")
+
+    if times_tried >= 4:
+        print("jeez, was it that hard ??")
+        print("------------------")
+    
+    print(f"you picked... {str(number_picked)}")
+    time.sleep(1.5)
+    print(f"that was {iceCreams[number_picked + 1]}")
+    time.sleep(0.8)
+    print("but")
+    time.sleep(1.5)
+    print(f"it is no longer {iceCreams[number_picked + 1]} !!!")
+    time.sleep(2.5)
+
+    iceCreams[number_picked + 1] = "FERRARI !!!"
+    print("FERRARI !!!!!!!!!!!!!")
+
+    time.sleep(1.5)
+    print("anyways here's your new ice cream selection lol")
+
+    time.sleep(1.5)
+    print("------------------")
+
+    for ic in iceCreams:
+        print(ic)
+
+
+    
+
+
+
+
 
 main()
