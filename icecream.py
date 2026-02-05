@@ -73,10 +73,4 @@ def main():
     printIceCreams()
 
 
-    
-
-
-
-
-
 main()
