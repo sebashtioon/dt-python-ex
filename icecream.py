@@ -4,6 +4,10 @@ iceCreams = []
 def addIceCream(icecream):
     iceCreams.append(icecream)
 
+def printIceCreams():
+    for i, ic in enumerate(iceCreams, 1):
+        print(f"{i}. {ic}")
+
 
 def main():
 
@@ -27,11 +31,7 @@ def main():
     print("woah, those are some awesome flavours.\ni added 3 more for some more variation:")
 
     print("------------------")
-
-    # iterate through all ice creames and print them individually
-    for ic in iceCreams:
-        print(ic)
-
+    printIceCreams()
     print("------------------")
 
     times_tried : int = 0
@@ -70,8 +70,7 @@ def main():
     time.sleep(1.5)
     print("------------------")
 
-    for ic in iceCreams:
-        print(ic)
+    printIceCreams()
 
 
     
