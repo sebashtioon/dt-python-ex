@@ -6,6 +6,4 @@ def main():
     else:
         print("youre a minor")
 
-
-
 main()
