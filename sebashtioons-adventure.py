@@ -7,7 +7,8 @@ difficulties : list = ["ez", "mid", "expert+"]
 
 
 # utility
-def _cls():
+
+def _cls(): # clear terminal
     os.system('cls' if os.name == 'nt' else 'clear')
 
 def gameQuit():
