@@ -11,6 +11,10 @@ difficulties : list = ["ez", "mid", "expert+"]
 def _cls(): # clear terminal
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def _ok() -> bool: # display ok option
+    print("type anything to continue...")
+    ok = input("")
+
 def gameQuit():
     _cls()
 
@@ -19,6 +23,7 @@ def gameStart():
 
 
 def mainMenu():
+    _cls()
     _in_main_menu = True
     print("--------------------")
     print("ebashtioons adventure")
@@ -40,7 +45,9 @@ def mainMenu():
     elif option == 2:
         pass
     elif option == 3:
-        pass
+        _cls()
+        print("thing")
+
     elif option == 4:
         gameQuit()
 
