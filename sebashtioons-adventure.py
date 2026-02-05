@@ -14,9 +14,15 @@ def _cls(): # clear terminal
 def _ok() -> bool: # display ok option
     print("type anything to continue...")
     ok = input("")
+    return True
 
 def gameQuit():
     _cls()
+
+def gameTutorial():
+    print("hi\nhi")
+    if _ok():
+        print("YOOOOOO")
 
 def gameStart():
     pass
@@ -46,7 +52,7 @@ def mainMenu():
         pass
     elif option == 3:
         _cls()
-        print("thing")
+        gameTutorial()
 
     elif option == 4:
         gameQuit()
