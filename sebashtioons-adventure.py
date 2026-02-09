@@ -76,7 +76,6 @@ def gameSettings():
         mainMenu()
 
 
-
 # ok actual game
 
 def gameStart():
