@@ -32,7 +32,7 @@ def mainMenu():
     _cls()
     _in_main_menu = True
     print("--------------------")
-    print("ebashtioons adventure")
+    print("sebashtioons adventure")
     print("--------------------")
 
     print("please select an option:")
