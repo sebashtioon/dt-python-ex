@@ -1,5 +1,6 @@
 import time
 import os
+import random
 
 _in_main_menu : bool = False
 
@@ -22,6 +23,20 @@ def type_text(text: str, delay: float = 0.04, end: str = "\n") -> None:
         time.sleep(delay)
     if end:
         print(end, end="", flush=True)
+
+def fake_loader(label: str = "loading", length: int = 20, min_delay: float = 0.03, max_delay: float = 0.12) -> None:
+    print(f"{label}...", flush=True)
+    progress = 0
+    while progress <= length:
+        # simulate buffer stalls with occasional longer pauses
+        stall = random.random() < 0.12
+        delay = random.uniform(max_delay, max_delay * 2.5) if stall else random.uniform(min_delay, max_delay)
+        bar = "#" * progress + "-" * (length - progress)
+        print(f"[{bar}]", end="\r", flush=True)
+        time.sleep(delay)
+        progress += random.choice([0, 1, 1, 2])
+    print(f"[{'#' * length}]", flush=True)
+    _cls()
 
 
 # core (the actual fucking game and functionality)
@@ -51,6 +66,7 @@ def gameSettings():
 
 def gameStart():
     _cls()
+    fake_loader()
     firstDialogue()
 
 def firstDialogue() -> bool:
