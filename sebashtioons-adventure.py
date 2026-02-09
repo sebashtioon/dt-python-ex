@@ -57,7 +57,8 @@ def mainMenu(invalid_option : bool = False):
     if option == "1":
         pass
     elif option == "2":
-        pass
+        _cls()
+        gameSettings()
     elif option == "3":
         _cls()
         gameTutorial()
