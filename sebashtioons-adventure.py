@@ -32,6 +32,11 @@ def _ok() -> bool: # display ok option
     ok = input("")
     return True
 
+def _options(first : str = "", second : str = "", third : str = "", fourth : str = ""):
+    pass
+
+
+
 # cool typing text
 def type_text(text: str, delay: float = 0.04, end: str = "\n") -> None:
     for ch in text:
@@ -91,16 +96,6 @@ def firstDialogue() -> bool:
     type_text("i hadnt slept too well last night, ", 0.1, "")
     time.sleep(0.6)
     type_text("too much math homework", 0.07)
-
-
-
-
-
-
-
-
-
-
 
 
 
