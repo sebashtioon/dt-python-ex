@@ -55,8 +55,11 @@ def gameStart():
 
 def firstDialogue() -> bool:
     type_text("i arrived at school on a chilly, windy morning", 0.07)
-    time.sleep(1.0)
+    time.sleep(0.9)
 
+    type_text("i hadnt slept too well last night, ", 0.1, "")
+    time.sleep(0.6)
+    type_text("too much math homework", 0.07)
 
 
 
