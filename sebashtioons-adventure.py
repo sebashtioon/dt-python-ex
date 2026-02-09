@@ -17,9 +17,9 @@ class character:
 
 
 # pre randomized story values
-__main_friends = {
-
-}
+__main_friend_selec = [
+    character("jack", "16", "he", "him", "his")
+]
 
 
 # utility
