@@ -20,17 +20,21 @@ def gameQuit():
     _cls()
 
 def gameTutorial():
-    print("hi\nhi")
+    print("--------------------")
+    print("to be done")
+    print("--------------------")
     if _ok():
-        print("YOOOOOO")
+        mainMenu()
 
 def gameStart():
     pass
 
 
-def mainMenu():
+def mainMenu(invalid_option : bool = False):
     _cls()
     _in_main_menu = True
+    if invalid_option:
+        print("\033[31mplease select a valid option\033[0m")
     print("--------------------")
     print("sebashtioons adventure")
     print("--------------------")
@@ -42,20 +46,23 @@ def mainMenu():
     print("3. how to play")
     print("4. quit")
 
-
     option = input("")
-
-    _cls()
-    if option == 1:
+    
+    #_cls()
+    if option == "1":
         pass
-    elif option == 2:
+    elif option == "2":
         pass
-    elif option == 3:
+    elif option == "3":
         _cls()
         gameTutorial()
-
-    elif option == 4:
+    
+    elif option == "4":
         gameQuit()
+    
+    else:
+
+        mainMenu(True)
 
 
 def main():
