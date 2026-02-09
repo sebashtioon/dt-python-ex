@@ -23,6 +23,7 @@ def gameQuit():
     _cls()
 
 def gameTutorial():
+    _cls()
     print("--------------------")
     print("to be done")
     print("--------------------")
@@ -30,6 +31,7 @@ def gameTutorial():
         mainMenu()
 
 def gameSettings():
+    _cls()
     print("--------------------")
     print("to be done")
     print("--------------------")
@@ -64,10 +66,8 @@ def mainMenu(invalid_option : bool = False):
     if option == "1":
         pass
     elif option == "2":
-        _cls()
         gameSettings()
     elif option == "3":
-        _cls()
         gameTutorial()
     
     elif option == "4":
