@@ -32,7 +32,7 @@ def _ok() -> bool: # display ok option
     ok = input("")
     return True
 
-def _options(*options: str) -> str:
+def _options(*options: str, header: str = "please select an option:") -> str:
     if len(options) == 1 and isinstance(options[0], (list, tuple)):
         options = tuple(options[0])
 
@@ -42,7 +42,8 @@ def _options(*options: str) -> str:
         print("no options available")
         return ""
 
-    print("please select an option:")
+    if header:
+        print(header)
     for idx, opt in enumerate(options, start=1):
         print(f"{idx}. {opt}")
 
@@ -115,6 +116,7 @@ def firstDialogue() -> bool:
     type_text("i hadnt slept too well last night, ", 0.1, "")
     time.sleep(0.6)
     type_text("too much math homework", 0.07)
+    _options("stay")
 
 
 
