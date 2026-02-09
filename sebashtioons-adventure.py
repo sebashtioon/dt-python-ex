@@ -52,8 +52,8 @@ def _options(*options: str, header: str = "please select an option:") -> str:
         if choice.isdigit():
             index = int(choice) - 1
             if 0 <= index < len(options):
+                _cls()
                 return options[index]
-
 
 
 # cool typing text
