@@ -16,6 +16,9 @@ def _ok() -> bool: # display ok option
     ok = input("")
     return True
 
+
+# core (the actual fucking game)
+
 def gameQuit():
     _cls()
 
