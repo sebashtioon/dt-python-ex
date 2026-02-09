@@ -33,13 +33,13 @@ def _ok() -> bool: # display ok option
     return True
 
 def _options(*options: str, header: str = "please select an option:") -> str:
+    print("--------------------")
     if len(options) == 1 and isinstance(options[0], (list, tuple)):
         options = tuple(options[0])
 
     options = [opt for opt in options if isinstance(opt, str) and opt.strip()]
 
     if not options:
-        print("no options available")
         return ""
 
     if header:
@@ -53,7 +53,6 @@ def _options(*options: str, header: str = "please select an option:") -> str:
             index = int(choice) - 1
             if 0 <= index < len(options):
                 return options[index]
-        print("please select a valid option")
 
 
 
