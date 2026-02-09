@@ -26,6 +26,9 @@ def gameTutorial():
     if _ok():
         mainMenu()
 
+def gameSettings():
+    pass
+
 def gameStart():
     pass
 
