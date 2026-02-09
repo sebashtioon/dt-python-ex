@@ -32,6 +32,7 @@ def _ok() -> bool: # display ok option
     ok = input("")
     return True
 
+# cool typing text
 def type_text(text: str, delay: float = 0.04, end: str = "\n") -> None:
     for ch in text:
         print(ch, end="", flush=True)
@@ -39,11 +40,11 @@ def type_text(text: str, delay: float = 0.04, end: str = "\n") -> None:
     if end:
         print(end, end="", flush=True)
 
+# pls dont bully me for this it looks cool ok i put work into this
 def fake_loader(label: str = "loading", length: int = 20, min_delay: float = 0.03, max_delay: float = 0.12) -> None:
     print(f"{label}...", flush=True)
     progress = 0
     while progress <= length:
-        # simulate buffer stalls with occasional longer pauses
         stall = random.random() < 0.12
         delay = random.uniform(max_delay, max_delay * 2.5) if stall else random.uniform(min_delay, max_delay)
         bar = "#" * progress + "-" * (length - progress)
