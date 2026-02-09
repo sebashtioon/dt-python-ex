@@ -73,10 +73,10 @@ def mainMenu(invalid_option : bool = False):
 
         mainMenu(True)
 
-
+# c++ core
 def main():
     mainMenu()
 
 
-
+# go
 main()
