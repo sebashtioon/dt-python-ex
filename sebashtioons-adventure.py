@@ -115,7 +115,7 @@ def firstDialogue() -> bool:
     type_text("i hadnt slept too well last night, ", 0.1, "")
     time.sleep(0.6)
     type_text("too much math homework", 0.07)
-    _options("stay")
+    _options("go home", "die", header="what do you do?")
 
 
 
