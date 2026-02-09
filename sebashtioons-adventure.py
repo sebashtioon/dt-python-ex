@@ -6,6 +6,21 @@ _in_main_menu : bool = False
 
 difficulties : list = ["ez", "mid", "expert+"]
 
+# so we can make ppl easily
+class character:
+    def __init__(self, name="", age="", pr_obj="", pr_acc="", pr_poss=""):
+        self.name = name
+        self.age = age
+        self.pr_obj = pr_obj
+        self.pr_acc = pr_acc
+        self.pr_poss = pr_poss
+
+
+# pre randomized story values
+__main_friends = {
+
+}
+
 
 # utility
 
