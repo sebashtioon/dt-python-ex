@@ -17,7 +17,7 @@ def _ok() -> bool: # display ok option
     return True
 
 
-# core (the actual fucking game)
+# core (the actual fucking game and functionality)
 
 def gameQuit():
     _cls()
@@ -41,7 +41,6 @@ def gameSettings():
 def gameStart():
     pass
 
-
 def mainMenu(invalid_option : bool = False):
     _cls()
     _in_main_menu = True
@@ -62,7 +61,6 @@ def mainMenu(invalid_option : bool = False):
 
     option = input("")
     
-    #_cls()
     if option == "1":
         pass
     elif option == "2":
