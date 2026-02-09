@@ -30,7 +30,11 @@ def gameTutorial():
         mainMenu()
 
 def gameSettings():
-    pass
+    print("--------------------")
+    print("to be done")
+    print("--------------------")
+    if _ok():
+        mainMenu()
 
 def gameStart():
     pass
