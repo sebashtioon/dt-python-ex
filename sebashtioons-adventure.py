@@ -32,8 +32,27 @@ def _ok() -> bool: # display ok option
     ok = input("")
     return True
 
-def _options(first : str = "", second : str = "", third : str = "", fourth : str = ""):
-    pass
+def _options(*options: str) -> str:
+    if len(options) == 1 and isinstance(options[0], (list, tuple)):
+        options = tuple(options[0])
+
+    options = [opt for opt in options if isinstance(opt, str) and opt.strip()]
+
+    if not options:
+        print("no options available")
+        return ""
+
+    print("please select an option:")
+    for idx, opt in enumerate(options, start=1):
+        print(f"{idx}. {opt}")
+
+    while True:
+        choice = input("").strip()
+        if choice.isdigit():
+            index = int(choice) - 1
+            if 0 <= index < len(options):
+                return options[index]
+        print("please select a valid option")
 
 
 
