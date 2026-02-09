@@ -45,8 +45,31 @@ def gameSettings():
     if _ok():
         mainMenu()
 
+
+
+# ok actual game
+
 def gameStart():
-    pass
+    _cls()
+    firstDialogue()
+
+def firstDialogue() -> bool:
+    type_text("i arrived at school on a chilly, windy morning", 0.07)
+    time.sleep(1.0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def mainMenu(invalid_option : bool = False):
     _cls()
@@ -65,11 +88,11 @@ def mainMenu(invalid_option : bool = False):
     print("2. settings")
     print("3. how to play")
     print("4. quit")
-
+    
     option = input("")
     
     if option == "1":
-        pass
+        gameStart()
     elif option == "2":
         gameSettings()
     elif option == "3":
