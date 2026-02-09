@@ -36,8 +36,10 @@ def gameStart():
 def mainMenu(invalid_option : bool = False):
     _cls()
     _in_main_menu = True
+
     if invalid_option:
         print("\033[31mplease select a valid option\033[0m")
+    
     print("--------------------")
     print("sebashtioons adventure")
     print("--------------------")
