@@ -16,6 +16,13 @@ def _ok() -> bool: # display ok option
     ok = input("")
     return True
 
+def type_text(text: str, delay: float = 0.04, end: str = "\n") -> None:
+    for ch in text:
+        print(ch, end="", flush=True)
+        time.sleep(delay)
+    if end:
+        print(end, end="", flush=True)
+
 
 # core (the actual fucking game and functionality)
 
@@ -78,7 +85,6 @@ def mainMenu(invalid_option : bool = False):
 # c++ core
 def main():
     mainMenu()
-
 
 # go
 main()
