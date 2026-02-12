@@ -1,6 +1,7 @@
 import time
 import os
 import random
+import sys
 
 _in_main_menu : bool = False
 
@@ -27,23 +28,63 @@ __main_friend_selec = [
 def _cls(): # clear terminal
     os.system('cls' if os.name == 'nt' else 'clear')
 
+def _clear_input_buffer() -> None:
+    try:
+        if os.name == "nt":
+            import msvcrt
+            while msvcrt.kbhit():
+                msvcrt.getwch()
+        else:
+            import termios
+            termios.tcflush(sys.stdin, termios.TCIFLUSH)
+    except Exception:
+        pass
+
 def _ok() -> bool: # display ok option
     print("type anything to continue...")
+    _clear_input_buffer()
     ok = input("")
     return True
 
+def _options(*options: str, header: str = "please select an option:") -> str:
+    print("--------------------")
+    if len(options) == 1 and isinstance(options[0], (list, tuple)):
+        options = tuple(options[0])
+
+    options = [opt for opt in options if isinstance(opt, str) and opt.strip()]
+
+    if not options:
+        return ""
+
+    if header:
+        print(header)
+    for idx, opt in enumerate(options, start=1):
+        print(f"{idx}. {opt}")
+
+    while True:
+        _clear_input_buffer()
+        choice = input("").strip()
+        if choice.isdigit():
+            index = int(choice) - 1
+            if 0 <= index < len(options):
+                _cls()
+                return options[index]
+
+
+# cool typing text
 def type_text(text: str, delay: float = 0.04, end: str = "\n") -> None:
     for ch in text:
         print(ch, end="", flush=True)
         time.sleep(delay)
     if end:
         print(end, end="", flush=True)
+    _clear_input_buffer()
 
+# pls dont bully me for this it looks cool ok i put work into this
 def fake_loader(label: str = "loading", length: int = 20, min_delay: float = 0.03, max_delay: float = 0.12) -> None:
     print(f"{label}...", flush=True)
     progress = 0
     while progress <= length:
-        # simulate buffer stalls with occasional longer pauses
         stall = random.random() < 0.12
         delay = random.uniform(max_delay, max_delay * 2.5) if stall else random.uniform(min_delay, max_delay)
         bar = "#" * progress + "-" * (length - progress)
@@ -90,16 +131,7 @@ def firstDialogue() -> bool:
     type_text("i hadnt slept too well last night, ", 0.1, "")
     time.sleep(0.6)
     type_text("too much math homework", 0.07)
-
-
-
-
-
-
-
-
-
-
+    _options("go home", "die", header="what do you do?")
 
 
 
@@ -122,6 +154,7 @@ def mainMenu(invalid_option : bool = False):
     print("3. how to play")
     print("4. quit")
     
+    _clear_input_buffer()
     option = input("")
     
     if option == "1":
